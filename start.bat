@@ -128,6 +128,7 @@ echo 5 - Sideload flashable zip file
 echo 6 - Logcat
 echo C - Connected devices
 echo CWL - Connect to a wireless device
+echo PAIR - Pair with your device (Android 11 only feature)
 echo X - Back
 echo.
 set /P M="Input options shown above then press ENTER: "
@@ -141,6 +142,8 @@ if %M%==5 GOTO adb_sideload
 if %M%==6 GOTO adb_logcat
 if %M%==CWL GOTO adb_cwl
 if %M%==cwl GOTO adb_cwl
+if %M%==PAIR GOTO adb_pair
+if %M%==pair GOTO adb_pair
 if %M%==X GOTO menu
 if %M%==x GOTO menu
 cls
@@ -898,3 +901,14 @@ cd scrc19
 scrcpy
 cd ..&cd..
 goto scrcpy
+
+:adb_pair
+cls
+echo.
+cd variables && type startprint && cd ..
+echo Adb pair
+echo ==============================
+set /P pair_ip="Please type in the IP address to pair to: "
+set /P pair_port="Please type in the port to pair to: "
+echo cd bin && adb pair %pair_ip% %pair_port && cd .. && call delworking.bat >> working.bat
+call working.bat
