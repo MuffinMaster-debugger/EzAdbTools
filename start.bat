@@ -82,9 +82,7 @@ goto :menu
 cls
 set M=
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Start Menu
 echo ==============================
 echo.
@@ -103,9 +101,7 @@ if %M%==X GOTO exit
 if %M%==x GOTO exit
 if %M%=show c GOTO elic
 cls
-cd variables
-type error1003
-cd ..
+cd variables && type error1003 && cd ..
 choice /d y /t 2 > nul
 set M=
 goto menu
@@ -114,9 +110,7 @@ goto menu
 cls
 set M=
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo adb Related
 echo ==============================
 echo.
@@ -128,6 +122,7 @@ echo 5 - Sideload flashable zip file
 echo 6 - Logcat
 echo C - Connected devices
 echo CWL - Connect to a wireless device
+echo PAIR - Pair with your device (Android 11 only feature)
 echo X - Back
 echo.
 set /P M="Input options shown above then press ENTER: "
@@ -141,12 +136,12 @@ if %M%==5 GOTO adb_sideload
 if %M%==6 GOTO adb_logcat
 if %M%==CWL GOTO adb_cwl
 if %M%==cwl GOTO adb_cwl
+if %M%==PAIR GOTO adb_pair
+if %M%==pair GOTO adb_pair
 if %M%==X GOTO menu
 if %M%==x GOTO menu
 cls
-cd variables
-type error1003
-cd ..
+cd variables && type error1003 && cd ..
 choice /d y /t 2 > nul
 set M=
 goto adb
@@ -154,9 +149,7 @@ goto adb
 :adb_cwl
 cls
 set M=
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Connect to a wireless device
 echo ==============================
 echo. 
@@ -184,9 +177,7 @@ echo
 cls
 set M=
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Application Manager
 echo ==============================
 echo.
@@ -202,9 +193,7 @@ if %M%==3 GOTO adb_app_list
 if %M%==X GOTO adb
 if %M%==x GOTO adb
 cls
-cd variables
-type error1003
-cd ..
+cd variables && type error1003 && cd ..
 choice /d y /t 2 > nul
 set M=
 goto adb_appman
@@ -212,9 +201,7 @@ goto adb_appman
 :adb_app_install
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Install Applications
 echo ==============================
 echo.
@@ -238,9 +225,7 @@ call working.bat
 :adb_app_uni
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint ¢$ cd ..
 echo Uninstall Applications
 echo ==============================
 echo.
@@ -251,9 +236,7 @@ goto adb_appman
 :adb_app_list
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo List Applications
 echo ==============================
 echo.
@@ -266,9 +249,7 @@ goto adb_appman
 :adb_android_shell
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Android Shell
 echo ==============================
 echo.
@@ -279,9 +260,7 @@ goto menu
 :adb_su_android_shell
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Android Shell
 echo ==============================
 echo.
@@ -293,9 +272,7 @@ adb.exe shell
 :adb_devices
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Connected devices
 echo ==============================
 echo.
@@ -311,9 +288,7 @@ goto adb
 cls
 set M=
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Reboot Menu
 echo ==============================
 echo.
@@ -335,9 +310,7 @@ if %M%==6 GOTO adb_reboot_safemode_root
 if %M%==X GOTO adb
 if %M%==x GOTO adb
 cls
-cd variables
-type error1003
-cd ..
+cd variables && type error1003 && cd ..
 choice /d y /t 2 > nul
 set M=
 goto adb_reboot
@@ -345,9 +318,7 @@ goto adb_reboot
 :adb_reboot_device
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Reboot device
 echo ==============================
 echo.
@@ -361,9 +332,7 @@ goto adb_reboot
 :adb_reboot_fastboot
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Reboot into Fastboot Mode
 echo ==============================
 echo.
@@ -377,9 +346,7 @@ goto adb_reboot
 :adb_reboot_recovery
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Reboot into Recovery Mode
 echo ==============================
 echo.
@@ -393,9 +360,7 @@ goto adb_reboot
 :adb_reboot_edl
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Reboot into EDL
 echo ==============================
 echo.
@@ -409,9 +374,7 @@ goto adb_reboot
 :adb_reboot_download
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Reboot into Download Mode
 echo ==============================
 echo.
@@ -425,9 +388,7 @@ goto adb_reboot
 :adb_reboot_safemode_root
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Reboot into Safe Mode (ROOT)
 echo ==============================
 echo.
@@ -441,9 +402,7 @@ goto adb_reboot
 :adb_full_backup
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Full Backup
 echo ==============================
 echo.
@@ -503,9 +462,7 @@ choice /d y /t 3 > nul
 cls
 set M=
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Sideload flashable zip file
 echo ==============================
 echo.
@@ -530,9 +487,7 @@ call working.bat
 cls
 set M=
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Logcat
 echo ==============================
 echo.
@@ -545,9 +500,7 @@ adb logcat
 cls
 set M=
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo fastboot Related
 echo ==============================
 echo.
@@ -567,9 +520,7 @@ if %M%==5 GOTO fastboot_charge
 if %M%==X GOTO menu
 if %M%==x GOTO menu
 cls
-cd variables
-type error1003
-cd ..
+cd variables && type error1003 && cd ..
 choice /d y /t 2 > nul
 set M=
 goto fastboot
@@ -577,9 +528,7 @@ goto fastboot
 :fastboot_reboot
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Reboot Device
 echo ==============================
 echo.
@@ -595,9 +544,7 @@ goto fastboot
 :fastboot_unlock
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Bootloader unlocking related 
 echo ==============================
 echo.
@@ -618,9 +565,7 @@ if %M%==r GOTO fastboot_relockbl
 if %M%==X GOTO menu
 if %M%==x GOTO menu
 cls
-cd variables
-type error1003
-cd ..
+cd variables && type error1003 && cd ..
 choice /d y /t 2 > nul
 set M=
 goto fastboot_unlock
@@ -628,9 +573,7 @@ goto fastboot_unlock
 :fastboot_unlock_stat
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Bootloader Unlock Status
 echo ==============================
 echo.
@@ -644,9 +587,7 @@ goto fastboot_unlock
 :fastboot_unlock_nocode
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Bootloader Unlock (No code)
 echo ==============================
 echo.
@@ -661,9 +602,7 @@ goto fastboot_unlock
 set unlock_key=
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Unlock Bootloader (Code needed)
 echo ==============================
 echo.
@@ -686,9 +625,7 @@ call working.bat
 set unlock_bin=
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo unlock.bin Unlock
 echo ==============================
 echo.
@@ -716,9 +653,7 @@ goto menu
 :fastboot_device_id
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Get device-id
 echo ==============================
 echo.
@@ -731,9 +666,7 @@ goto fastboot
 :fastboot_flash
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Flash image file
 echo ==============================
 echo.
@@ -758,9 +691,7 @@ call working.bat
 :fastboot_charge
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Enable Charge Screen
 echo ==============================
 echo.
@@ -770,9 +701,7 @@ if %M%==n GOTO fastboot
 if %M%==Y GOTO fastboot_charge_y
 if %M%==N GOTO fastboot
 cls
-cd variables
-type error1003
-cd ..
+cd variables && type error1003 && cd ..
 choice /d y /t 2 > nul
 set M=
 goto fastboot_charge
@@ -780,9 +709,7 @@ goto fastboot_charge
 :fastboot_charge_y
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Enable Charge Screen
 echo ==============================
 echo.
@@ -794,9 +721,7 @@ goto fastboot
 :exit
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Exit
 echo ==============================
 echo.
@@ -811,9 +736,7 @@ exit
 cls
 set M=
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Command Line
 echo ==============================
 echo.
@@ -827,9 +750,7 @@ cmd
 cls
 set M=
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo Display control
 echo ==============================
 echo.
@@ -843,9 +764,7 @@ if %M%==19 GOTO use_scrcpy_19
 if %M%==x GOTO menu
 if %M%==X GOTO menu
 cls
-cd variables
-type error1003
-cd ..
+cd variables && type error1003 && cd ..
 choice /d y /t 2 > nul
 set M=
 goto scrcpy
@@ -853,9 +772,7 @@ goto scrcpy
 :use_scrcpy
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo scrcpy
 echo ==============================
 echo.
@@ -869,9 +786,7 @@ goto scrcpy
 :use_scrcpy_sw
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo scrcpy
 echo ==============================
 echo.
@@ -885,9 +800,7 @@ goto scrcpy
 :use_scrcpy_19
 cls
 echo.
-cd variables
-type startprint
-cd ..
+cd variables && type startprint && cd ..
 echo scrcpy
 echo ==============================
 echo.
@@ -898,3 +811,14 @@ cd scrc19
 scrcpy
 cd ..&cd..
 goto scrcpy
+
+:adb_pair
+cls
+echo.
+cd variables && type startprint && cd ..
+echo Adb pair
+echo ==============================
+set /P pair_ip="Please type in the IP address to pair to: "
+set /P pair_port="Please type in the port to pair to: "
+echo cd bin && adb pair %pair_ip% %pair_port && cd .. && call delworking.bat >> working.bat
+call working.bat
