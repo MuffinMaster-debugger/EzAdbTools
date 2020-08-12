@@ -76,6 +76,10 @@ set connectadb=
 echo Done!
 choice /d y /t 1 > nul
 
+::Display splash screen
+cls
+cd variables && type welcomeprint && cd ..
+
 goto :menu
 
 :menu
