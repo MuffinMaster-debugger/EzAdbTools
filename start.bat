@@ -79,6 +79,9 @@ choice /d y /t 1 > nul
 ::Display splash screen
 cls
 cd variables && type welcomeprint && cd ..
+echo.
+echo Welcome to EzAdbTools!
+choice /d y /t 5 > nul
 
 goto :menu
 
@@ -729,11 +732,18 @@ cd variables && type startprint && cd ..
 echo Exit
 echo ==============================
 echo.
-echo Exiting in 2 seconds...
 choice /d y /t 2 > nul
 taskkill /im /f adb.exe
 taskkill /im /f fastboot.exe
 del working.bat
+
+::Display splash screen
+cls
+cd variables && type welcomeprint && cd ..
+echo.
+echo Goodbye!
+choice /d y /t 5 > nul
+
 exit
 
 :cmd
