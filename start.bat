@@ -78,7 +78,7 @@ set fastboot_flash_image=
 set unlock_bin=
 set unlock_key=
 set tcpip=
-set connectadb
+set connectadb=
 echo.
 
 echo Done!
