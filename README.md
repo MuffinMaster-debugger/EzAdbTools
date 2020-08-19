@@ -3,9 +3,8 @@
 ## 💻System Requirements
 - Windows 7 or newer
 - A 64-bit system
-- Any Android device
+- Any Android device with Kitkat or newer
 - Device driver installed
-- API Level 19 or higher for scrcpy
 - Java (>= 7)
 
 ## 📦Download
