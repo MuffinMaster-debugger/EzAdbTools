@@ -23,6 +23,7 @@ title EzAdbTools
 color 0a
 
 echo Checking system...
+echo.
 
 echo =========================
 echo CPU Info:
@@ -35,6 +36,7 @@ if %errorlevel%==0 (
     choice /d y /t 2 > nul
     exit
 )
+echo.
 
 echo Checking for adb.exe...
 if not exist "%CD%\bin\adb.exe" (
@@ -43,6 +45,7 @@ choice /d y /t 2 > nul
 exit
 ) else (
 echo Found adb.exe
+echo.
 )
 
 echo Checking for fastboot...
@@ -50,16 +53,20 @@ if not exist "%CD%\bin\fastboot.exe" (
 echo E1002: Unable to find fastboot.exe. Redownload this application.
 choice /d y /t 2 > nul
 exit
-)
+) else (
 echo Found fastboot.exe
+echo.
+)
 
 echo Starting Services...
+echo.
 
 echo Resetting adb...
 cd bin
 adb.exe kill-server
 adb.exe start-server
 cd ..
+echo.
 
 echo Resetting variables...
 set M=
@@ -71,14 +78,15 @@ set fastboot_flash_image=
 set unlock_bin=
 set unlock_key=
 set tcpip=
-set connectadb=
+set connectadb
+echo.
 
 echo Done!
 choice /d y /t 1 > nul
 
 ::Display splash screen
 cls
-cd variables && type welcomeprint && cd ..
+cd variables && echo. && echo. && echo. && type welcomeprint && cd ..
 echo.
 echo Welcome to EzAdbTools!
 choice /d y /t 5 > nul
@@ -739,11 +747,10 @@ del working.bat
 
 ::Display splash screen
 cls
-cd variables && type welcomeprint && cd ..
+cd variables && echo. && echo. && echo. && type welcomeprint && cd ..
 echo.
 echo Goodbye!
 choice /d y /t 5 > nul
-
 exit
 
 :cmd
